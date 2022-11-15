@@ -6,29 +6,23 @@ import com.hubspot.jinjava.Jinjava;
 
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
-import java.util.Scanner;
-import java.util.stream.Collectors;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         new Main().run();
     }
-    public void run() throws IOException {
-        Jinjava jinjava = new Jinjava();
+    public void run() {
         String mainTemplate = getResourceFileAsString("main.txt");
 
         boolean running = true;
         while(running){
             System.out.println(mainTemplate);
             switch (getInput()) {
-                case "1" -> beatmap();
-                case "2" -> user();
+                case "1" -> user();
+                case "2" -> beatmap();
                 default -> System.out.println("Invalid input");
             }
             System.out.println("again? (y/n)");
@@ -42,7 +36,7 @@ public class Main {
         System.out.println(beatmapTemplate);
         switch (getInput()) {
             case "1" -> listAllBeatmaps();
-            case "2" -> System.out.println("find"); //TODO: find beatmap
+            case "2" -> findInMap(getAllBeatmaps());
             default -> System.out.println("Invalid input");
         }
     }
@@ -51,7 +45,7 @@ public class Main {
         System.out.println(userTemplate);
         switch (getInput()) {
             case "1" -> listAllUsers();
-            case "2" -> System.out.println("find"); //TODO: find user
+            case "2" -> findInMap(getAllUsers());
             default -> System.out.println("Invalid input");
         }
     }
@@ -60,16 +54,26 @@ public class Main {
         try {
             return Resources.toString(Resources.getResource(fileName), Charsets.UTF_8);
         }catch (Exception e){
-            System.out.println("-----------------");
+            System.out.println("could not find resource file: " + fileName);
             e.printStackTrace();
         }
         return null;
     }
     void listAllBeatmaps(){
-        getAllBeatmaps().forEach((key,beatmap) -> System.out.println(key + ": " + beatmap));
+        Jinjava jinjava = new Jinjava();
+        StringBuilder sb = new StringBuilder();
+        getAllBeatmaps().forEach((key,beatmap) -> sb.append(" - ").append(key).append(": ").append(beatmap).append("\n"));
+        Map<String, Object> context = new HashMap<>();
+        context.put("list", sb.toString());
+        System.out.println(jinjava.render(getResourceFileAsString("listAll.txt"), context));
     }
     void listAllUsers(){
-        getAllUsers().forEach((key,user) -> System.out.println(key + ": " + user));
+        Jinjava jinjava = new Jinjava();
+        StringBuilder sb = new StringBuilder();
+        getAllUsers().forEach((key,user) -> sb.append(" - ").append(key).append(": ").append(user).append("\n"));
+        Map<String, Object> context = new HashMap<>();
+        context.put("list", sb.toString());
+        System.out.println(jinjava.render(getResourceFileAsString("listAll.txt"), context));
     }
 
     static Map<Integer,String> getAllUsers() {
@@ -106,6 +110,15 @@ public class Main {
             e.printStackTrace();
         }
         return "";
+    }
+    void findInMap(Map<Integer,String> map){
+        System.out.println("Enter search term");
+        String searchTerm = getInput();
+        map.forEach((key,value) -> {
+            if(value.contains(searchTerm)){
+                System.out.println(key + ": " + value);
+            }
+        });
     }
 
 }
