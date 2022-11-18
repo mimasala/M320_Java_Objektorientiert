@@ -1,6 +1,7 @@
 # M320
-Mischa Strauss Joel Sow
+Joel Sow Mischa Strauss 
 
+---
 ## Introduction
 ### Encapsulation:
 Encapsulation protects an object from unauthorized acces by clients.
