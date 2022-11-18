@@ -4,18 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c59670f-daa1-4992-8e76-dc57a44ce296" name="Changes" comment="api requests">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/tbz/InputService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/tbz/helpers/FakerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/tbz/log/OsuLog.java" afterDir="false" />
+    <list default="true" id="7c59670f-daa1-4992-8e76-dc57a44ce296" name="Changes" comment="update README.md">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/tbz/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/tbz/Program.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/api/ApiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/tbz/helpers/ApiService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/beatmap/BeatmapService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/tbz/beatmap/BeatmapService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/tbz/user/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/tbz/user/UserService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +49,7 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
@@ -90,7 +81,10 @@
       <workItem from="1668619692814" duration="6398000" />
       <workItem from="1668719204853" duration="2379000" />
       <workItem from="1668721733869" duration="3829000" />
-      <workItem from="1668764814709" duration="5143000" />
+      <workItem from="1668764814709" duration="5561000" />
+      <workItem from="1668771439265" duration="7000" />
+      <workItem from="1668772166554" duration="4493000" />
+      <workItem from="1668797768487" duration="475000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1668514291929</created>
@@ -106,7 +100,28 @@
       <option name="project" value="LOCAL" />
       <updated>1668526686787</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="finished K02">
+      <created>1668770415735</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1668770415735</updated>
+    </task>
+    <task id="LOCAL-00004" summary="update README.md">
+      <created>1668782590829</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1668782590829</updated>
+    </task>
+    <task id="LOCAL-00005" summary="update README.md">
+      <created>1668783491928</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1668783491928</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -126,6 +141,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
     <MESSAGE value="add User.java, Beatmap.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="add User.java, Beatmap.java" />
+    <MESSAGE value="finished K02" />
+    <MESSAGE value="update README.md" />
+    <option name="LAST_COMMIT_MESSAGE" value="update README.md" />
   </component>
 </project>
