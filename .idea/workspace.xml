@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c59670f-daa1-4992-8e76-dc57a44ce296" name="Changes" comment="update README.md">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="7c59670f-daa1-4992-8e76-dc57a44ce296" name="Changes" comment="new task" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,7 +13,6 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -23,7 +20,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="K01" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -49,20 +46,14 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
-  <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="ch.tbz" />
-    </key>
-  </component>
   <component name="RunManager">
-    <configuration name="Program" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ch.tbz.Program" />
+    <configuration name="Unnamed" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ch.tbz.Main" />
       <module name="proj1" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -78,13 +69,6 @@
       <option name="presentableId" value="Default" />
       <updated>1668514230959</updated>
       <workItem from="1668514232283" duration="890000" />
-      <workItem from="1668619692814" duration="6398000" />
-      <workItem from="1668719204853" duration="2379000" />
-      <workItem from="1668721733869" duration="3829000" />
-      <workItem from="1668764814709" duration="5561000" />
-      <workItem from="1668771439265" duration="7000" />
-      <workItem from="1668772166554" duration="4493000" />
-      <workItem from="1668797768487" duration="475000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1668514291929</created>
@@ -93,35 +77,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668514291929</updated>
     </task>
-    <task id="LOCAL-00002" summary="add User.java, Beatmap.java">
-      <created>1668526686787</created>
+    <task id="LOCAL-00002" summary="new task">
+      <created>1668798369155</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1668526686787</updated>
+      <updated>1668798369155</updated>
     </task>
-    <task id="LOCAL-00003" summary="finished K02">
-      <created>1668770415735</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1668770415735</updated>
-    </task>
-    <task id="LOCAL-00004" summary="update README.md">
-      <created>1668782590829</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1668782590829</updated>
-    </task>
-    <task id="LOCAL-00005" summary="update README.md">
-      <created>1668783491928</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1668783491928</updated>
-    </task>
-    <option name="localTasksCounter" value="6" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -140,9 +103,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
-    <MESSAGE value="add User.java, Beatmap.java" />
-    <MESSAGE value="finished K02" />
-    <MESSAGE value="update README.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="update README.md" />
+    <MESSAGE value="new task" />
+    <option name="LAST_COMMIT_MESSAGE" value="new task" />
   </component>
 </project>
