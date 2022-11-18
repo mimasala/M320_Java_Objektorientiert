@@ -1,6 +1,7 @@
 package ch.tbz.beatmap;
 
 
+import ch.tbz.exception.BeatmapNotFoundException;
 import ch.tbz.helpers.ApiService;
 import ch.tbz.log.OsuLog;
 import com.google.gson.Gson;
@@ -23,8 +24,16 @@ public class BeatmapService {
         response = jsonObject.get("beatmaps").toString();
         Type beatmapListType = new com.google.gson.reflect.TypeToken<List<Beatmap>>(){}.getType();
         Gson gson = new Gson();
-        return gson.fromJson(
-                response, beatmapListType);
+        List<Beatmap> beatmapList = gson.fromJson(response, beatmapListType);
+        try {
+            if (beatmapList.isEmpty()) {
+                throw new BeatmapNotFoundException("Beatmap not found: ", title);
+            }
+        } catch (BeatmapNotFoundException e) {
+            e.printStackTrace();
+        } finally {
+            return beatmapList;
+        }
     }
     public void printBeatmap(List<Beatmap> beatmaps) {
         log.info(new GsonBuilder().setPrettyPrinting().create().toJson(beatmaps));

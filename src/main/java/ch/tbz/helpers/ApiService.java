@@ -12,8 +12,8 @@ public class ApiService {
                 .GET()
                 .build();
         try {
-            HttpResponse<String> response = HttpClient.newHttpClient()
-                    .send(
+            HttpResponse<String> response = HttpClient
+                    .newHttpClient().send(
                             request,
                             HttpResponse.BodyHandlers.ofString());
             return response.body();
