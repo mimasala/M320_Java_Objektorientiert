@@ -1,4 +1,4 @@
-package ch.tbz.api;
+package ch.tbz.helpers;
 
 import java.net.URI;
 import java.net.http.HttpClient;
