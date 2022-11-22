@@ -150,16 +150,14 @@ class runner{
 
 ## Project/implementation
 
-the classes User.java and Beatmap.java are Objects, which are used to store data.
-The class Menu.java is a class that is used to display the menu and get the user input.
+The classes User.java and Beatmap.java are Objects, which are used to store data.
+The class Menu.java is a class that is used to display the menu, and it contains the entire project flow.
 The class InputService.java is a class that is used to get the user input.
-The class Main.java is the main class that is used to run the program.
+The class Program.java is the main class that is used to initially run the program.
 
-Service classes are used to delegate tasks to other classes.
-
-I implemented some helper classes, which dont directly serve an object, but are used to delegate code to other classes.
+We implemented some helper classes, which don't directly serve an object, but are used to delegate code to other classes.
 These classes are:
 
 the OsuLog.java class is used to log certain texts to the console with colors.
-
-
+the ApiService.java class is used to get the data from the osu!search api.
+the FakerService.java class is used to generate fake user data. (because we couldn't find a user api )
