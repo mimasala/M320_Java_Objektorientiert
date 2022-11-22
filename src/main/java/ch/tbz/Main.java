@@ -18,7 +18,7 @@ public class Main {
         String mainTemplate = getResourceFileAsString("main.txt");
 
         boolean running = true;
-        while(running){
+        do {
             System.out.println(mainTemplate);
             switch (getInput()) {
                 case "1" -> user();
@@ -29,7 +29,7 @@ public class Main {
             if(getInput().equals("n")){
                 running = false;
             }
-        }
+        }while (running);
     }
     void beatmap(){
         String beatmapTemplate = getResourceFileAsString("beatmap_options.txt");
