@@ -4,15 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7c59670f-daa1-4992-8e76-dc57a44ce296" name="Changes" comment="new task">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/tbz/exception/BeatmapNotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/tbz/exception/UserNotFoundException.java" afterDir="false" />
+    <list default="true" id="7c59670f-daa1-4992-8e76-dc57a44ce296" name="Changes" comment="add custom exceptions">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/beatmap/BeatmapService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/tbz/beatmap/BeatmapService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/helpers/ApiService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/tbz/helpers/ApiService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/log/OsuLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/tbz/log/OsuLog.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,7 +22,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="K02" />
+        <entry key="$PROJECT_DIR$" value="K03" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -45,25 +38,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/TBZ/M165",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Program" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ch.tbz.Program" />
-      <module name="proj1" />
+      <module name="M320_Joel_Mischa" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -78,6 +73,12 @@
       <option name="presentableId" value="Default" />
       <updated>1668514230959</updated>
       <workItem from="1668514232283" duration="890000" />
+      <workItem from="1668816662503" duration="606000" />
+      <workItem from="1668952332126" duration="1353000" />
+      <workItem from="1669051426529" duration="3525000" />
+      <workItem from="1669103580202" duration="54000" />
+      <workItem from="1669110727495" duration="235000" />
+      <workItem from="1669118480554" duration="56000" />
     </task>
     <task id="LOCAL-00001" summary="init">
       <created>1668514291929</created>
@@ -93,7 +94,14 @@
       <option name="project" value="LOCAL" />
       <updated>1668798369155</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="add custom exceptions">
+      <created>1668801203689</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1668801203689</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -113,6 +121,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="init" />
     <MESSAGE value="new task" />
-    <option name="LAST_COMMIT_MESSAGE" value="new task" />
+    <MESSAGE value="add custom exceptions" />
+    <option name="LAST_COMMIT_MESSAGE" value="add custom exceptions" />
   </component>
 </project>
