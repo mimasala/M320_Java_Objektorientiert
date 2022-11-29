@@ -1,5 +1,6 @@
 package ch.tbz.user;
 
+import ch.tbz.exception.UserNotFoundException;
 import ch.tbz.helpers.FakerService;
 import ch.tbz.log.OsuLog;
 import com.google.gson.Gson;
@@ -15,8 +16,12 @@ public class UserService {
     public UserService() {
         this.userDB = FakerService.createUserDataBase(100);
     }
-    public List<User> findUser(String name) {
-        return userDB.stream().filter(user -> user.getUsername().contains(name)).toList();
+    public List<User> findUser(String name) throws UserNotFoundException {
+        List<User> foundUsers = userDB.stream().filter(user -> user.getUsername().contains(name)).toList();
+        if (foundUsers.isEmpty()) {
+            throw new UserNotFoundException("User not found: ", name);
+        }
+        return foundUsers;
     }
     public void printUser(List<User> users) {
         log.info(new GsonBuilder().setPrettyPrinting().create().toJson(users));

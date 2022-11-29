@@ -17,7 +17,7 @@ public class BeatmapService {
     private final OsuLog log = new OsuLog();
     private final ApiService apiService = new ApiService();
 
-    public List<Beatmap> searchBeatmap(String title) {
+    public List<Beatmap> searchBeatmap(String title) throws BeatmapNotFoundException {
         String response = apiService.getResponse(
                 String.format("https://osusearch.com/query/?title=%s&offset=0", URLEncoder.encode(title, StandardCharsets.UTF_8)));
         JsonObject jsonObject = new Gson().fromJson(response, JsonObject.class);
@@ -25,15 +25,11 @@ public class BeatmapService {
         Type beatmapListType = new com.google.gson.reflect.TypeToken<List<Beatmap>>(){}.getType();
         Gson gson = new Gson();
         List<Beatmap> beatmapList = gson.fromJson(response, beatmapListType);
-        try {
-            if (beatmapList.isEmpty()) {
-                throw new BeatmapNotFoundException("Beatmap not found: ", title);
-            }
-        } catch (BeatmapNotFoundException e) {
-            e.printStackTrace();
-        } finally {
-            return beatmapList;
+        if (beatmapList.isEmpty()) {
+            throw new BeatmapNotFoundException("Beatmap not found: ", title);
         }
+        return beatmapList;
+
     }
     public void printBeatmap(List<Beatmap> beatmaps) {
         log.info(new GsonBuilder().setPrettyPrinting().create().toJson(beatmaps));
