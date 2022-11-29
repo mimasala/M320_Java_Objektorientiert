@@ -3,8 +3,10 @@ package ch.tbz;
 import ch.tbz.beatmap.BeatmapService;
 import ch.tbz.exception.BeatmapNotFoundException;
 import ch.tbz.exception.UserNotFoundException;
+import ch.tbz.helpers.InputService;
 import ch.tbz.log.OsuLog;
 import ch.tbz.user.UserService;
+
 
 
 public class Menu {
