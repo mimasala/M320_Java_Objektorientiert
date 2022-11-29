@@ -1,6 +1,7 @@
 package ch.tbz;
 
 import ch.tbz.beatmap.BeatmapService;
+import ch.tbz.helpers.InputService;
 import ch.tbz.user.UserService;
 
 
