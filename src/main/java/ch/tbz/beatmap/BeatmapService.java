@@ -14,7 +14,6 @@ import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 public class BeatmapService {
-    private final OsuLog log = new OsuLog();
     private final ApiService apiService = new ApiService();
 
     public List<Beatmap> searchBeatmap(String title) throws BeatmapNotFoundException {
@@ -32,6 +31,9 @@ public class BeatmapService {
         return beatmapList;
     }
     public void printBeatmap(List<Beatmap> beatmaps) {
-        log.info(new GsonBuilder().setPrettyPrinting().create().toJson(beatmaps));
+        OsuLog.info(new GsonBuilder()
+                .setPrettyPrinting()
+                .create()
+                .toJson(beatmaps));
     }
 }

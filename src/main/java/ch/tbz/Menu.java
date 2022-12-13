@@ -2,7 +2,8 @@ package ch.tbz;
 
 import ch.tbz.beatmap.BeatmapService;
 import ch.tbz.exception.UserNotFoundException;
-import ch.tbz.user.UserService;
+import ch.tbz.entities.user.UserService;
+import ch.tbz.helpers.InputService;
 
 
 public class Menu {
@@ -24,7 +25,7 @@ public class Menu {
                     System.out.println("2. inspect User");
                     String userSelection = InputService.getString("Enter your selection: ");
                     switch (userSelection) {
-                        case "1" -> userService.printUser(userService.getUserDB());
+                        case "1" -> userService.printUsers(userService.getAllUsers());
                         case "2" -> searchUser();
                         default -> System.err.println("Invalid selection");
                     }
@@ -46,7 +47,7 @@ public class Menu {
     void searchUser(){
         try{
             String name = InputService.getString("Enter the name of the user: ");
-            userService.printUser(userService.findUser(name));
+            userService.printUsers(userService.getByName(name));
         } catch (UserNotFoundException e) {
             System.err.println(e.getMessage());
         }

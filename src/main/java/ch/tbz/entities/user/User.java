@@ -1,4 +1,4 @@
-package ch.tbz.user;
+package ch.tbz.entities.user;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
