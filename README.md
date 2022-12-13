@@ -1,48 +1,24 @@
 # M320
 Joel Sow Mischa Strauss 
 
-### Aggregation / hat-beziehung:
-In Java, aggregation refers to the act of combining multiple objects into one object. 
-This can be thought of as creating a "has-a" relationship between the objects. 
-For example, if you have a Car class and an Engine class, the Car class could have an instance of the Engine class as one of its attributes. 
-This would mean that a Car "has-an" Engine, and the relationship between the two classes is an example of aggregation.
+### Inheritance
 
-```java
-public class Car {
-  private String name;
-  private Engine engine;
-  public Car(String name, Engine engine){
-      this.name = name;
-      this.engine = engine;
-  }
-}
+Inheritance is a way to reuse code from one class in another. 
+It allows a child class to have the attributes and behaviors of a parent class, making it easier to create and maintain an application.
 
-public class Engine {
-  private String name;
-}
-```
-***
+### Abstract classes
+An abstract class is a class that cannot be instantiated and is used as a blueprint for other classes. 
+It can have both abstract and non-abstract methods, which provide common behavior and allow subclasses to have their own unique behavior. 
+Abstract classes are often used to define common behavior among related classes.
 
-### Composition
-Composition refers to the act of creating objects that are made up of other objects. 
-This is similar to aggregation, but with one key difference: 
-in composition, the composed objects have a strong ownership relationship, meaning that they cannot exist independently of the object that contains them. 
-For example:
-A Car object would have an Engine object as one of its attributes. 
-However, in this case, the Engine object would be created and destroyed along with the Car object. 
-This means that the Car "is-made-up-of" Engine, and the relationship between the two classes is an example of composition.
+### Interfaces
+An interface is a collection of abstract methods that a class must implement. 
+It defines behavior that a class must have, but does not provide any implementation. 
+This means a class that implements an interface must implement all the methods defined in the interface. 
+Interfaces are often used to define common behavior that multiple classes can implement.
 
-```java
-public class Car {
-  private String name;
-  private Engine engine;
-
-  public Car() {
-    engine = new Engine();
-  }
-}
-
-public class Engine {
-  private String name;
-}
-```
+### Polymorphism
+Polymorphism is the ability of an object to take on many forms. 
+In object-oriented programming, polymorphism refers to the ability of a variable, object, or function to take on multiple forms. 
+For example, a variable of type Object in Java can hold any type of object, such as a String, a Button, or a Car. 
+This allows you to write code that can handle different types of objects in a flexible and generic way.
