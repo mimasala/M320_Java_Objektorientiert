@@ -29,6 +29,11 @@ public class UserRepository implements CrudOperations<User, Integer> {
 
     @Override
     public void delete(Integer integer) {
-        userDB.getUsers().remove(integer);
+        if (userDB.getUsers().isEmpty()){
+            return;
+        }
+        userDB.getUsers().removeIf(user ->
+                user.getUserId()
+                        .equals(integer));
     }
 }
