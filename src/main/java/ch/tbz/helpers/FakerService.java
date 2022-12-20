@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 /**
+ * class to generate fake data
  * @author mytal, joelsow
  * @version 1.0.0
  */

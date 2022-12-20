@@ -1,5 +1,6 @@
 package ch.tbz.log;
 /**
+ * class to print text with colors
  * @author mytal, joelsow
  * @version 1.0.0
  */

@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 /**
+ * beatmap entity class
  * @author mytal, joelsow
  * @version 1.0.0
  */

@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 /**
+ * contains helper functions for input
  * @author mytal, joelsow
  * @version 1.0.0
  */

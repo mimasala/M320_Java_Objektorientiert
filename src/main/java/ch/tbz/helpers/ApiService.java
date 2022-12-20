@@ -5,6 +5,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 /**
+ * api call class
  * @author mytal, joelsow
  * @version 1.0.0
  */

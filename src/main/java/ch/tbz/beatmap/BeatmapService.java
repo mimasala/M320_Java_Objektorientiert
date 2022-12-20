@@ -13,6 +13,7 @@ import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 /**
+ * contains logic for beatmap
  * @author mytal, joelsow
  * @version 1.0.0
  */

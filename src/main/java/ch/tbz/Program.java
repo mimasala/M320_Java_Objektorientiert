@@ -1,5 +1,6 @@
 package ch.tbz;
 /**
+ * contains the main method
  * @author mytal, joelsow
  * @version 1.0.0
  */

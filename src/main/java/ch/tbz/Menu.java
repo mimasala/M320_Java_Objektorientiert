@@ -4,6 +4,7 @@ import ch.tbz.beatmap.BeatmapService;
 import ch.tbz.exception.UserNotFoundException;
 import ch.tbz.user.UserService;
 /**
+ * contains business logic
  * @author mytal, joelsow
  * @version 1.0.0
  */

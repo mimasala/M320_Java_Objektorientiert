@@ -10,6 +10,7 @@ import lombok.Setter;
 import java.util.List;
 
 /**
+ * contains the logic for the user
  * @author mytal, joelsow
  * @version 1.0.0
  */

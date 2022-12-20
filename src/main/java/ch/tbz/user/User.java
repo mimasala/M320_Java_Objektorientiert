@@ -6,6 +6,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 /**
+ * user entity class
  * @author mytal, joelsow
  * @version 1.0.0
  */
