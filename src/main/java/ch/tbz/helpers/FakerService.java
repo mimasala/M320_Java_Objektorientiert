@@ -6,8 +6,15 @@ import com.github.javafaker.Faker;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
-
+/**
+ * @author mytal, joelsow
+ * @version 1.0.0
+ */
 public class FakerService {
+    /**
+     * @param amount of fake users
+     * @return List of fake users with fake data
+     */
     public static List<User> createUserDataBase(int amount) {
         Faker faker = new Faker(new Locale("en-US"));
         List<User> users = new ArrayList<>();

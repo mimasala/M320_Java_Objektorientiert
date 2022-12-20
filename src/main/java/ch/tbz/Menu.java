@@ -3,12 +3,18 @@ package ch.tbz;
 import ch.tbz.beatmap.BeatmapService;
 import ch.tbz.exception.UserNotFoundException;
 import ch.tbz.user.UserService;
-
+/**
+ * @author mytal, joelsow
+ * @version 1.0.0
+ */
 
 public class Menu {
     BeatmapService beatmapService = new BeatmapService();
     UserService userService = new UserService();
 
+    /**
+     * main project flow
+     */
     public void run() {
         String selection = "0";
         while (!selection.equals("3")) {
@@ -35,6 +41,10 @@ public class Menu {
         }
     }
 
+    /**
+     * outsourcing code
+     * @deprecated  should not use, because its ugly
+     */
     void searchBeatmap(){
         try{
             String title = InputService.getString("Enter the title of the beatmap: ");
@@ -43,6 +53,10 @@ public class Menu {
             System.err.println(e.getMessage());
         }
     }
+    /**
+     * outsourcing code
+     * @deprecated  should not use, because its ugly
+     */
     void searchUser(){
         try{
             String name = InputService.getString("Enter the name of the user: ");

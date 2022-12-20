@@ -5,6 +5,10 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+/**
+ * @author mytal, joelsow
+ * @version 1.0.0
+ */
 @Getter@Setter@AllArgsConstructor@ToString
 public class User {
     private Integer userId;

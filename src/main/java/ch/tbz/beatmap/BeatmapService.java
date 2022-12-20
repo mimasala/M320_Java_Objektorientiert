@@ -12,11 +12,19 @@ import java.lang.reflect.Type;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
-
+/**
+ * @author mytal, joelsow
+ * @version 1.0.0
+ */
 public class BeatmapService {
     private final OsuLog log = new OsuLog();
     private final ApiService apiService = new ApiService();
 
+    /**
+     * @param title of the song you're searching for
+     * @return the list of found beatmaps, that match the param
+     * @throws BeatmapNotFoundException if no beatmap of the given title was found.
+     */
     public List<Beatmap> searchBeatmap(String title) throws BeatmapNotFoundException {
         String response = apiService.getResponse(
                 String.format("https://osusearch.com/query/?title=%s&offset=0", URLEncoder.encode(title, StandardCharsets.UTF_8)));

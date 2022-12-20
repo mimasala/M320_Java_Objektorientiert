@@ -4,8 +4,15 @@ import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-
+/**
+ * @author mytal, joelsow
+ * @version 1.0.0
+ */
 public class ApiService {
+    /**
+     * @param url url
+     * @return response json
+     */
     public String getResponse(String url) {
         HttpRequest request = HttpRequest.newBuilder()
                 .uri(URI.create(url))
