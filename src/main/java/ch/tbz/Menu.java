@@ -1,8 +1,8 @@
 package ch.tbz;
 
-import ch.tbz.beatmap.BeatmapService;
-import ch.tbz.exception.UserNotFoundException;
+import ch.tbz.entities.beatmap.BeatmapService;
 import ch.tbz.entities.user.UserService;
+import ch.tbz.exception.UserNotFoundException;
 import ch.tbz.helpers.InputService;
 
 
@@ -10,7 +10,7 @@ public class Menu {
     BeatmapService beatmapService = new BeatmapService();
     UserService userService = new UserService();
 
-    public void run() {
+    public Menu run() {
         String selection = "0";
         while (!selection.equals("3")) {
             System.out.println("Welcome to osu!Search");
@@ -34,6 +34,7 @@ public class Menu {
                 default -> System.err.println("Invalid selection!");
             }
         }
+        return this;
     }
 
     void searchBeatmap(){

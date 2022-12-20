@@ -1,4 +1,4 @@
-package ch.tbz.beatmap;
+package ch.tbz.entities.beatmap;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

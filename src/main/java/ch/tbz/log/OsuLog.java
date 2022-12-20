@@ -1,8 +1,5 @@
 package ch.tbz.log;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 public class OsuLog {
     public static void debug(String logging) {
         System.out.println(("\u001B[34m" + logging + "\u001B[0m"));

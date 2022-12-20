@@ -4,7 +4,6 @@ import ch.tbz.entities.user.User;
 import com.github.javafaker.Faker;
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Locale;
 
 public class FakerService {
@@ -13,7 +12,6 @@ public class FakerService {
         ArrayList<User> users = new ArrayList<>();
         for (int i = 0; i < amount; i++) {
             users.add(new User(
-                    (int) faker.number().randomNumber(),
                     faker.name().username(),
                     faker.internet().password(),
                     faker.internet().emailAddress(),

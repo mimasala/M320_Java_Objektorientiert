@@ -1,6 +1,7 @@
-package ch.tbz.beatmap;
+package ch.tbz.entities.beatmap;
 
 
+import ch.tbz.entities.CrudOperations;
 import ch.tbz.exception.BeatmapNotFoundException;
 import ch.tbz.helpers.ApiService;
 import ch.tbz.log.OsuLog;
@@ -13,7 +14,9 @@ import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 
-public class BeatmapService {
+import static ch.tbz.Program.beatmapDB;
+
+public class BeatmapService implements CrudOperations<Beatmap, Integer > {
     private final ApiService apiService = new ApiService();
 
     public List<Beatmap> searchBeatmap(String title) throws BeatmapNotFoundException {
@@ -35,5 +38,35 @@ public class BeatmapService {
                 .setPrettyPrinting()
                 .create()
                 .toJson(beatmaps));
+    }
+
+    @Override
+    public List<Beatmap> getAll() {
+        return beatmapDB;
+    }
+
+    @Override
+    public Beatmap get(Integer integer) {
+        return beatmapDB.get(integer);
+    }
+
+    @Override
+    public void save(Beatmap beatmap) {
+        beatmapDB.add(beatmap);
+    }
+
+    @Override
+    public void saveAll(List<Beatmap> beatmaps) {
+        beatmapDB.addAll(beatmaps);
+    }
+
+    @Override
+    public void update(Integer id, Beatmap beatmap) {
+        beatmapDB.set(id, beatmap);
+    }
+
+    @Override
+    public void delete(Integer integer) {
+        beatmapDB.remove(beatmapDB.get(integer));
     }
 }

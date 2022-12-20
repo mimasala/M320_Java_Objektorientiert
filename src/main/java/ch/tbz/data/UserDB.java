@@ -1,13 +1,16 @@
 package ch.tbz.data;
 
 import ch.tbz.entities.user.User;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
 
 import java.util.ArrayList;
+import java.util.List;
 
-@Getter@Setter@AllArgsConstructor
-public class UserDB {
-    private ArrayList<User> users;
+public class UserDB extends ArrayList<User> {
+    public UserDB() {
+        super();
+    }
+
+    public UserDB(List<User> users) {
+        super(users);
+    }
 }
