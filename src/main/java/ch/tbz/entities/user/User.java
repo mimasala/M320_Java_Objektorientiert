@@ -1,12 +1,13 @@
 package ch.tbz.entities.user;
 
+import ch.tbz.entities.Entities;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
 @Getter@Setter@AllArgsConstructor@ToString
-public class User {
+public class User extends Entities {
     private String username;
     private String password;
     private String email;

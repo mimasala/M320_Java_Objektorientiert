@@ -5,23 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c59670f-daa1-4992-8e76-dc57a44ce296" name="Changes" comment="update delete operation">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/tbz/TUI/CrudTUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/tbz/TUI/beatmap/BeatmapTUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/tbz/data/BeatmapDB.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ch/tbz/helpers/template/templateService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/ch/tbz/entities/Entities.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/tbz/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/Program.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/tbz/Program.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/beatmap/Beatmap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/tbz/entities/beatmap/Beatmap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/beatmap/BeatmapService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/tbz/entities/beatmap/BeatmapService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/data/UserDB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/tbz/data/UserDB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/entities/CrudOperations.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/tbz/entities/CrudOperations.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/entities/beatmap/Beatmap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/tbz/entities/beatmap/Beatmap.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/entities/user/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/tbz/entities/user/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/entities/user/UserRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/entities/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/tbz/entities/user/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/helpers/FakerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/tbz/helpers/FakerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ch/tbz/log/OsuLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ch/tbz/log/OsuLog.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +26,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="K04" />
+        <entry key="$PROJECT_DIR$" value="K09" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
