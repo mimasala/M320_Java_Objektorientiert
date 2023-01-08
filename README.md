@@ -2,7 +2,6 @@
 Joel Sow Mischa Strauss 
 
 ### Inheritance
-
 Inheritance is a way to reuse code from one class in another. 
 It allows a child class to have the attributes and behaviors of a parent class, making it easier to create and maintain an application.
 
