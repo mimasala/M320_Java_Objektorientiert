@@ -11,6 +11,7 @@ import com.google.gson.JsonObject;
 
 import java.lang.reflect.Type;
 import java.net.URLEncoder;
+import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 
@@ -19,9 +20,9 @@ import static ch.tbz.Program.beatmapDB;
 public class BeatmapService implements CrudOperations<Beatmap, Integer > {
     private final ApiService apiService = new ApiService();
 
-    public List<Beatmap> searchBeatmap(String title) throws BeatmapNotFoundException {
+    public List<Beatmap> searchBeatmap(String title, Charset charset) throws BeatmapNotFoundException {
         String response = apiService.getResponse(
-                String.format("https://osusearch.com/query/?title=%s&offset=0", URLEncoder.encode(title, StandardCharsets.UTF_8)));
+                String.format("https://osusearch.com/query/?title=%s&offset=0", URLEncoder.encode(title, charset)));
         JsonObject jsonObject = new Gson().fromJson(response, JsonObject.class);
         response = jsonObject.get("beatmaps").toString();
         Type beatmapListType = new com.google.gson.reflect.TypeToken<List<Beatmap>>(){}.getType();
@@ -32,6 +33,10 @@ public class BeatmapService implements CrudOperations<Beatmap, Integer > {
             throw new BeatmapNotFoundException("Beatmap not found: ", title);
         }
         return beatmapList;
+    }
+
+    public List<Beatmap> searchBeatmap(String title) throws BeatmapNotFoundException{
+        return searchBeatmap(title, StandardCharsets.UTF_8);
     }
     public void printBeatmap(List<Beatmap> beatmaps) {
         OsuLog.info(new GsonBuilder()

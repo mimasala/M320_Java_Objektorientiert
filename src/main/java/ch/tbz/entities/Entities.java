@@ -9,7 +9,7 @@ import java.time.format.DateTimeFormatter;
 
 @Getter@Setter
 public abstract class Entities {
-    @Getter(AccessLevel.NONE)
+    @Getter(AccessLevel.NONE)@Setter(AccessLevel.NONE)
     protected LocalDateTime creationDate = LocalDateTime.now();
     public String getFormattedDateTime() {
         return DateTimeFormatter
