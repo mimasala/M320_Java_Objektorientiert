@@ -1,6 +1,7 @@
 package ch.tbz.entities.beatmap;
 
 
+import ch.tbz.data.BeatmapDB;
 import ch.tbz.entities.CrudOperations;
 import ch.tbz.exception.BeatmapNotFoundException;
 import ch.tbz.helpers.ApiService;
@@ -8,11 +9,13 @@ import ch.tbz.log.OsuLog;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
+import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
 import java.net.URLEncoder;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
 import java.util.List;
 
 import static ch.tbz.Program.beatmapDB;
@@ -38,11 +41,30 @@ public class BeatmapService implements CrudOperations<Beatmap, Integer > {
     public List<Beatmap> searchBeatmap(String title) throws BeatmapNotFoundException{
         return searchBeatmap(title, StandardCharsets.UTF_8);
     }
+    public void addBeatmaps(String title) throws BeatmapNotFoundException {
+        beatmapDB.addAll(searchBeatmap("title"));
+    }
     public void printBeatmap(List<Beatmap> beatmaps) {
         OsuLog.info(new GsonBuilder()
                 .setPrettyPrinting()
                 .create()
                 .toJson(beatmaps));
+    }
+    public Beatmap beatmapFromJsonString(String json){
+        return new Gson().fromJson(json, Beatmap.class);
+    }
+
+    public void saveBeatmapFromJsonString(String json){
+        save(beatmapFromJsonString(json));
+    }
+
+    public void saveAllBeatmapsFromJsonString(String jsonArray){
+        Type userListType = new TypeToken<ArrayList<Beatmap>>(){}.getType();
+        saveAll(new Gson().fromJson(jsonArray, userListType));
+    }
+    public Beatmap updateBeatmapFromJsonString(String json, Integer id){
+        Beatmap beatmap = beatmapFromJsonString(json);
+        throw new RuntimeException("not implemented");
     }
 
     @Override

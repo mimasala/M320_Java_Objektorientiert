@@ -4,9 +4,8 @@ import ch.tbz.entities.Entities;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 
-@Getter@Setter@AllArgsConstructor@ToString
+@Getter@Setter@AllArgsConstructor
 public class Beatmap extends Entities {
     private String title;
     private String artist;

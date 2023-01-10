@@ -1,0 +1,9 @@
+------------------------------------------
+BEATMAP
+------------------------------------------
+get all saved beatmaps
+get beatmap by ID
+save beatmap from json
+save all beatmaps from json
+search beatmap by name
+add beatmaps by name
