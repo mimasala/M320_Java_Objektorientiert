@@ -1,7 +1,6 @@
 package ch.tbz.entities.beatmap;
 
 
-import ch.tbz.data.BeatmapDB;
 import ch.tbz.entities.CrudOperations;
 import ch.tbz.exception.BeatmapNotFoundException;
 import ch.tbz.helpers.ApiService;
@@ -9,13 +8,11 @@ import ch.tbz.log.OsuLog;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
-import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
 import java.net.URLEncoder;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 

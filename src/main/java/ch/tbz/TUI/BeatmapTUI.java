@@ -41,6 +41,5 @@ public class BeatmapTUI extends TUI {
                 OsuLog.info(service.updateBeatmapFromJsonString(InputService.getString("enter json: "), InputService.getNum("Enter id: ")).toString());
             }
         }
-
     }
 }
