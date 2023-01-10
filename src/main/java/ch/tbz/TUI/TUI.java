@@ -6,7 +6,7 @@ public abstract class TUI{
     public String mainScreen;
 
     public TUI(String name){
-        this.mainScreen = InputService.getResourceAsString(name);
+        this.mainScreen = InputService.getResourceAsString(name + ".txt");
     }
     abstract void startMenu();
 }

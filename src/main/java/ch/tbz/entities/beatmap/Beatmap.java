@@ -3,10 +3,12 @@ package ch.tbz.entities.beatmap;
 import ch.tbz.entities.Entities;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Getter@Setter@AllArgsConstructor
+@Getter@Setter@AllArgsConstructor@NoArgsConstructor
 public class Beatmap extends Entities {
+
     private String title;
     private String artist;
     private Double gamemode;

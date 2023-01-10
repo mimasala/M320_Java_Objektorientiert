@@ -21,6 +21,23 @@ public class InputService {
         return "";
     }
 
+    public static Integer getNum(){
+        return Integer.parseInt(getString());
+    }
+    public static Integer getNum(String message){
+        System.out.println(message);
+        return Integer.parseInt(getString());
+    }
+    public static String getString() {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        try {
+            return reader.readLine();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return "";
+    }
+
     public static String getResourceAsString(String name){
         try{
             URL url = Resources.getResource(name);

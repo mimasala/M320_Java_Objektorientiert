@@ -1,36 +1,48 @@
 package ch.tbz.entities.user;
 
 import ch.tbz.entities.CrudOperations;
-import ch.tbz.exception.UserNotFoundException;
 import ch.tbz.log.OsuLog;
+import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static ch.tbz.Program.userDB;
 @Getter@Setter@NoArgsConstructor
 public class UserService implements CrudOperations<User, Integer> {
-    public List<User> getByName(String name) throws UserNotFoundException {
-        List<User> filteredUserDB = getAll()
+    public String getByName(String name) {
+        return userListToPrettyJsonArray(
+                getAll()
                 .stream()
                 .filter(user -> user.getUsername().contains(name))
-                .toList();
-        if (filteredUserDB.isEmpty()) {
-            throw new UserNotFoundException("User not found: ", name);
-        }
-        return filteredUserDB;
-    }
-    public List<User> getAllUsers() {
-        return userDB;
+                .toList());
     }
     public void printUsers(List<User> users) {
         OsuLog.info(new GsonBuilder()
                 .setPrettyPrinting()
                 .create()
                 .toJson(users));
+    }
+    public User userFromJsonString(String json){
+        return new GsonBuilder().create().fromJson(json, User.class);
+    }
+    public void saveUserFromJsonString(String json){
+        User user = userFromJsonString(json);
+        userDB.add(user);
+    }
+    public void deleteUserByName(String string) {
+        userDB.removeIf(user -> user.getUsername().contains(string));
+    }
+    private String userListToPrettyJsonArray(List<User> userList){
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        return gson.toJson(userList);
     }
 // CRUD Operations
     @Override
@@ -40,7 +52,12 @@ public class UserService implements CrudOperations<User, Integer> {
 
     @Override
     public User get(Integer integer) {
-        return userDB.get(integer);
+        try {
+            return userDB.get(integer);
+        } catch (IndexOutOfBoundsException e) {
+            OsuLog.error("User with id " + integer + " not found");
+            return null;
+        }
     }
 
     @Override
@@ -61,4 +78,5 @@ public class UserService implements CrudOperations<User, Integer> {
     public void delete(Integer id) {
         userDB.remove(userDB.get(id));
     }
+
 }

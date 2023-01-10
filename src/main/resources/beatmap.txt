@@ -1,9 +1,11 @@
 ------------------------------------------
 BEATMAP
 ------------------------------------------
-get all saved beatmaps
-get beatmap by ID
-save beatmap from json
-save all beatmaps from json
-search beatmap by name
-add beatmaps by name
+1. get all saved beatmaps
+2. get beatmap by ID
+3. save beatmap from json
+4. delete beatmap by id
+5. delete beatmap by title
+6. search beatmap by name
+7. add beatmaps by name
+8. update beatmap by ID

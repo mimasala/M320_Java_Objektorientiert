@@ -17,6 +17,7 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 import static ch.tbz.Program.beatmapDB;
 
@@ -38,11 +39,25 @@ public class BeatmapService implements CrudOperations<Beatmap, Integer > {
         return beatmapList;
     }
 
-    public List<Beatmap> searchBeatmap(String title) throws BeatmapNotFoundException{
-        return searchBeatmap(title, StandardCharsets.UTF_8);
+    private String beatmapListToPrettyJsonArray(List<Beatmap> beatmapList) {
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        return gson.toJson(beatmapList);
     }
-    public void addBeatmaps(String title) throws BeatmapNotFoundException {
-        beatmapDB.addAll(searchBeatmap("title"));
+
+    public String searchBeatmap(String title){
+        try {
+            return beatmapListToPrettyJsonArray(searchBeatmap(title, StandardCharsets.UTF_8));
+        }catch (BeatmapNotFoundException e){
+            OsuLog.error(e.getMessage());
+        }
+        return null;
+    }
+    public void addBeatmaps(String title) {
+        try {
+            beatmapDB.addAll(searchBeatmap(title, StandardCharsets.UTF_8));
+        } catch (BeatmapNotFoundException e) {
+            OsuLog.error(e.getMessage());
+        }
     }
     public void printBeatmap(List<Beatmap> beatmaps) {
         OsuLog.info(new GsonBuilder()
@@ -58,13 +73,14 @@ public class BeatmapService implements CrudOperations<Beatmap, Integer > {
         save(beatmapFromJsonString(json));
     }
 
-    public void saveAllBeatmapsFromJsonString(String jsonArray){
-        Type userListType = new TypeToken<ArrayList<Beatmap>>(){}.getType();
-        saveAll(new Gson().fromJson(jsonArray, userListType));
-    }
     public Beatmap updateBeatmapFromJsonString(String json, Integer id){
         Beatmap beatmap = beatmapFromJsonString(json);
-        throw new RuntimeException("not implemented");
+        return beatmapDB.set(id, beatmap);
+    }
+
+    public void deleteBeatmapByTitle(String title){
+        beatmapDB.removeIf(x -> x.getTitle().toLowerCase(Locale.ROOT)
+                .contains(title.toLowerCase(Locale.ROOT)));
     }
 
     @Override
@@ -74,7 +90,12 @@ public class BeatmapService implements CrudOperations<Beatmap, Integer > {
 
     @Override
     public Beatmap get(Integer integer) {
-        return beatmapDB.get(integer);
+        try {
+            return beatmapDB.get(integer);
+        }catch (IndexOutOfBoundsException e){
+            OsuLog.error("Beatmap not found: " + integer);
+        }
+        return new Beatmap();
     }
 
     @Override
