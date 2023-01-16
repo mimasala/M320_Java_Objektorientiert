@@ -4,14 +4,10 @@ import ch.tbz.entities.CrudOperations;
 import ch.tbz.log.OsuLog;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.gson.reflect.TypeToken;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 import static ch.tbz.Program.userDB;

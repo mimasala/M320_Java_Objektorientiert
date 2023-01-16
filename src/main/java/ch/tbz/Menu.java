@@ -2,9 +2,6 @@ package ch.tbz;
 
 import ch.tbz.TUI.BeatmapTUI;
 import ch.tbz.TUI.UserTUI;
-import ch.tbz.entities.beatmap.BeatmapService;
-import ch.tbz.entities.user.UserService;
-import ch.tbz.exception.UserNotFoundException;
 import ch.tbz.helpers.InputService;
 
 
