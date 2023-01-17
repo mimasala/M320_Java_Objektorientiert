@@ -63,6 +63,11 @@ public class UserService implements CrudOperations<User, Integer>, BaseOperation
         }
     }
 
+    public void insertionSortByNameDesc() {
+        insertionSortByName();
+        Collections.reverse(userDB);
+    }
+
 // CRUD Operations
     @Override
     public List<User> getAll() {

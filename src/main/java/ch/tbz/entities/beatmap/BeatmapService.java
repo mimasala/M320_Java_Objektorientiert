@@ -120,6 +120,11 @@ public class BeatmapService implements CrudOperations<Beatmap, Integer >, BaseOp
         beatmapDB = beatmaps;
     }
 
+    public void bubbleSortBeatmapsDesc() {
+        bubbleSortBeatmaps();
+        Collections.reverse(beatmapDB);
+    }
+
     @Override
     public void save(Beatmap beatmap) {
         beatmapDB.add(beatmap);

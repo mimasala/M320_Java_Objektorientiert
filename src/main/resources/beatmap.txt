@@ -11,3 +11,5 @@ BEATMAP
 8. update beatmap by ID
 9. sort beatmaps by date
 10. sort beatmaps by title
+11. sort beatmaps by title descending
+

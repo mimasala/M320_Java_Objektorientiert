@@ -9,3 +9,4 @@ User
 6. search user by name
 7. sort users by date
 8. sort users by name
+9. sort users by name descending

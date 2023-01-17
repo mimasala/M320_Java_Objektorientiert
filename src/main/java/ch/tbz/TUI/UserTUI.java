@@ -26,6 +26,7 @@ public class UserTUI extends TUI {
             case "6" -> OsuLog.info(service.getByName(InputService.getString("Enter search term: ")));
             case "7" -> service.sortList();
             case "8" -> service.insertionSortByName();
+            case "9" -> service.insertionSortByNameDesc();
         }
     }
 }
