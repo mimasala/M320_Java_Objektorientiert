@@ -15,4 +15,9 @@ public class User extends Entities {
     private String joinDate;
     private String playTime;
     private String totalScore;
+
+    @Override
+    public int compareTo(Entities o) {
+        return this.getFormattedDateTime().compareTo(o.getFormattedDateTime());
+    }
 }

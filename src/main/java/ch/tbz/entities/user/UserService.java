@@ -1,5 +1,7 @@
 package ch.tbz.entities.user;
 
+import ch.tbz.data.UserDB;
+import ch.tbz.entities.BaseOperations;
 import ch.tbz.entities.CrudOperations;
 import ch.tbz.log.OsuLog;
 import com.google.gson.Gson;
@@ -8,11 +10,13 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import static ch.tbz.Program.userDB;
 @Getter@Setter@NoArgsConstructor
-public class UserService implements CrudOperations<User, Integer> {
+public class UserService implements CrudOperations<User, Integer>, BaseOperations {
     public String getByName(String name) {
         return userListToPrettyJsonArray(
                 getAll()
@@ -75,4 +79,8 @@ public class UserService implements CrudOperations<User, Integer> {
         userDB.remove(userDB.get(id));
     }
 
+    @Override
+    public void sortList() {
+        Collections.sort(userDB);
+    }
 }

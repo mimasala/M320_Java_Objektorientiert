@@ -1,6 +1,7 @@
 package ch.tbz.entities.beatmap;
 
 
+import ch.tbz.entities.BaseOperations;
 import ch.tbz.entities.CrudOperations;
 import ch.tbz.exception.BeatmapNotFoundException;
 import ch.tbz.helpers.ApiService;
@@ -13,12 +14,14 @@ import java.lang.reflect.Type;
 import java.net.URLEncoder;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
+import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
+import java.util.stream.Collectors;
 
 import static ch.tbz.Program.beatmapDB;
 
-public class BeatmapService implements CrudOperations<Beatmap, Integer > {
+public class BeatmapService implements CrudOperations<Beatmap, Integer >, BaseOperations {
     private final ApiService apiService = new ApiService();
 
     public List<Beatmap> searchBeatmap(String title, Charset charset) throws BeatmapNotFoundException {
@@ -113,5 +116,10 @@ public class BeatmapService implements CrudOperations<Beatmap, Integer > {
     @Override
     public void delete(Integer integer) {
         beatmapDB.remove(beatmapDB.get(integer));
+    }
+
+    @Override
+    public void sortList() {
+        Collections.sort(beatmapDB);
     }
 }

@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 @Getter@Setter
-public abstract class Entities {
+public abstract class Entities implements Comparable<Entities> {
     @Getter(AccessLevel.NONE)@Setter(AccessLevel.NONE)
     private transient LocalDateTime creationDate = LocalDateTime.now();
     public String getFormattedDateTime() {
@@ -23,4 +23,5 @@ public abstract class Entities {
                 getFormattedDateTime() + "\n" +
                 new GsonBuilder().setPrettyPrinting().create().toJson(this);
     }
+
 }

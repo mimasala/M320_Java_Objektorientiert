@@ -9,3 +9,4 @@ BEATMAP
 6. search beatmap by name
 7. add beatmaps by name
 8. update beatmap by ID
+9. sort beatmaps by date

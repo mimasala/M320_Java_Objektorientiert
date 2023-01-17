@@ -35,4 +35,9 @@ public class Beatmap extends Entities {
     private Double map_count;
     private Double play_count;
     private Object ignored;
+
+    @Override
+    public int compareTo(Entities o) {
+        return this.getFormattedDateTime().compareTo(o.getFormattedDateTime());
+    }
 }
