@@ -1,6 +1,7 @@
 package ch.tbz.entities.beatmap;
 
 
+import ch.tbz.data.BeatmapDB;
 import ch.tbz.entities.BaseOperations;
 import ch.tbz.entities.CrudOperations;
 import ch.tbz.exception.BeatmapNotFoundException;
@@ -96,6 +97,27 @@ public class BeatmapService implements CrudOperations<Beatmap, Integer >, BaseOp
             OsuLog.error("Beatmap not found: " + integer);
         }
         return new Beatmap();
+    }
+
+    public void bubbleSortBeatmaps() {
+        BeatmapDB beatmaps = beatmapDB;
+        boolean swapped;
+        for (int i = 0; i < beatmaps.size() - 1; i++) {
+            swapped = false;
+            for (int j = 0; j < beatmaps.size() - i - 1; j++) {
+                if (beatmaps.get(j).getTitle().compareTo(beatmaps.get(j + 1).getTitle()) > 0) {
+                    // swap array[j] and array[j+1]
+                    Beatmap temp = beatmaps.get(j);
+                    beatmaps.set(j, beatmaps.get(j + 1));
+                    beatmaps.set(j + 1, temp);
+                    swapped = true;
+                }
+            }
+            if (!swapped) {
+                break;
+            }
+        }
+        beatmapDB = beatmaps;
     }
 
     @Override

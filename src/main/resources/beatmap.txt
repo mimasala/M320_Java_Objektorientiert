@@ -10,3 +10,4 @@ BEATMAP
 7. add beatmaps by name
 8. update beatmap by ID
 9. sort beatmaps by date
+10. sort beatmaps by title
