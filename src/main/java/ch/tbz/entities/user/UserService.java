@@ -51,18 +51,16 @@ public class UserService implements CrudOperations<User, Integer>, BaseOperation
         return gson.toJson(userList);
     }
 
-    public void insertionSort() {
-        UserDB arr = userDB;
-        for (int i = 1; i < arr.size(); i++) {
-            String key = arr.get(i).getUsername();
-            int j = i-1;
-            while (j >= 0 && arr.get(j).getUsername().compareTo(key) > 0) {
-                arr.set(j+1, arr.get(j));
-                j = j-1;
+    public void insertionSortByName(){
+        for (int i = 1; i < userDB.size(); i++) {
+            User key = userDB.get(i);
+            int j = i - 1;
+            while (j >= 0 && userDB.get(j).getUsername().compareTo(key.getUsername()) > 0) {
+                userDB.set(j + 1, userDB.get(j));
+                j = j - 1;
             }
-            arr.set(j+1, getUserObjByName(key));
+            userDB.set(j + 1, key);
         }
-        userDB = arr;
     }
 
 // CRUD Operations
