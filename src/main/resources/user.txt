@@ -8,3 +8,4 @@ User
 5. delete user by name
 6. search user by name
 7. sort users by date
+8. sort users by name

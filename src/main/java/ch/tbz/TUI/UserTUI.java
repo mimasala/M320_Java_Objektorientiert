@@ -25,6 +25,7 @@ public class UserTUI extends TUI {
             case "5" -> service.deleteUserByName(InputService.getString("Enter name: "));
             case "6" -> OsuLog.info(service.getByName(InputService.getString("Enter search term: ")));
             case "7" -> service.sortList();
+            case "8" -> service.insertionSort();
         }
     }
 }
