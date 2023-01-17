@@ -24,6 +24,12 @@ public class UserService implements CrudOperations<User, Integer>, BaseOperation
                 .filter(user -> user.getUsername().contains(name))
                 .toList());
     }
+    public User getUserObjByName(String name){
+        return getAll()
+                .stream()
+                .filter(user -> user.getUsername().contains(name))
+                .toList().get(0);
+    }
     public void printUsers(List<User> users) {
         OsuLog.info(new GsonBuilder()
                 .setPrettyPrinting()
@@ -44,6 +50,21 @@ public class UserService implements CrudOperations<User, Integer>, BaseOperation
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
         return gson.toJson(userList);
     }
+
+    public void insertionSort() {
+        UserDB arr = userDB;
+        for (int i = 1; i < arr.size(); i++) {
+            String key = arr.get(i).getUsername();
+            int j = i-1;
+            while (j >= 0 && arr.get(j).getUsername().compareTo(key) > 0) {
+                arr.set(j+1, arr.get(j));
+                j = j-1;
+            }
+            arr.set(j+1, getUserObjByName(key));
+        }
+        userDB = arr;
+    }
+
 // CRUD Operations
     @Override
     public List<User> getAll() {
