@@ -21,9 +21,7 @@ public class Menu {
             switch (option) {
                 case 1 -> beatmapTUI.startMenu();
                 case 2 -> userTUI.startMenu();
-                case 3 -> {
-                    running = false;
-                }
+                case 3 -> running = false;
             }
         }while (running);
         System.out.println("Goodbye!");
