@@ -16,7 +16,7 @@ public class Menu {
             System.out.println("Please select an option:");
             System.out.println("1: beatmaps");
             System.out.println("2: users");
-            System.out.println("3: exit");
+            System.out.println("3: exit ");
             int option = InputService.getNum();
             switch (option) {
                 case 1 -> beatmapTUI.startMenu();
