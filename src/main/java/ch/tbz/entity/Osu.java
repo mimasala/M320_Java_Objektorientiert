@@ -1,14 +1,8 @@
-package ch.tbz.entities.beatmap;
+package ch.tbz.entity;
 
-import ch.tbz.entities.Entities;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import ch.tbz.generic.AbstractEntity;
 
-@Getter@Setter@AllArgsConstructor@NoArgsConstructor
-public class Beatmap extends Entities {
-
+public class Osu extends AbstractEntity {
     private String title;
     private String artist;
     private Double gamemode;
@@ -35,9 +29,4 @@ public class Beatmap extends Entities {
     private Double map_count;
     private Double play_count;
     private Object ignored;
-
-    @Override
-    public int compareTo(Entities o) {
-        return this.getFormattedDateTime().compareTo(o.getFormattedDateTime());
-    }
 }
