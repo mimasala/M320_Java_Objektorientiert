@@ -1,9 +1,9 @@
 package ch.tbz.gui.osu;
 
-import ch.tbz.entity.Osu;
-import ch.tbz.entity.OsuController;
-import ch.tbz.entity.OsuRepository;
-import ch.tbz.entity.OsuService;
+import ch.tbz.entity.osu.Osu;
+import ch.tbz.entity.osu.OsuController;
+import ch.tbz.entity.osu.OsuRepository;
+import ch.tbz.entity.osu.OsuService;
 import ch.tbz.gui.ActionPage;
 import ch.tbz.gui.GUIActions;
 import ch.tbz.gui.InputPage;

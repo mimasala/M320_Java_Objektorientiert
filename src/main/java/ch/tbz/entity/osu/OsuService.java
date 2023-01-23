@@ -1,4 +1,4 @@
-package ch.tbz.entity;
+package ch.tbz.entity.osu;
 
 import ch.tbz.generic.AbstractEntityService;
 

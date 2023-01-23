@@ -3,13 +3,20 @@ package ch.tbz.util;
 import com.google.api.client.http.*;
 import com.google.api.client.http.javanet.NetHttpTransport;
 import com.google.gson.Gson;
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.Setter;
 
 import java.io.IOException;
 
+@Getter@Setter
 public class API {
+    @Setter(AccessLevel.NONE)
     private final HttpRequestFactory requestFactory;
-    private final String baseUrl;
+    @Setter(AccessLevel.NONE)
     private final Gson gson;
+    private String baseUrl;
+    private String entityPrefix;
 
     public API(String baseUrl) {
         HttpTransport httpTransport = new NetHttpTransport();
@@ -22,7 +29,7 @@ public class API {
     }
 
     public String get(String endpoint) throws IOException {
-        HttpRequest request = requestFactory.buildGetRequest(new GenericUrl(baseUrl + endpoint));
+        HttpRequest request = requestFactory.buildGetRequest(new GenericUrl(baseUrl + entityPrefix + endpoint));
         HttpResponse response = request.execute();
         // do something with the response
         return response.parseAsString();
@@ -31,7 +38,7 @@ public class API {
     public String post(String endpoint, Object data) throws IOException {
         String json = gson.toJson(data);
         HttpContent content = new UrlEncodedContent(json);
-        HttpRequest request = requestFactory.buildPostRequest(new GenericUrl(baseUrl + endpoint), content);
+        HttpRequest request = requestFactory.buildPostRequest(new GenericUrl(baseUrl + entityPrefix + endpoint), content);
         HttpResponse response = request.execute();
         // do something with the response
         return response.parseAsString();

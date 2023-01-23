@@ -7,12 +7,12 @@ import ch.tbz.util.PropertiesLoader;
 import java.util.Properties;
 
 public class Main {
-    private static API api;
+    public static API api;
     private Properties properties;
 
     public Main() {
         this.properties = PropertiesLoader.loadProperties();
-        api = new API(properties.getProperty("api.url"));
+        api = new API(properties.getProperty("backend.url"));
     }
 
     public static void main(String[] args) {
