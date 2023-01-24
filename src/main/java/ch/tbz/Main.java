@@ -5,6 +5,7 @@ import ch.tbz.util.API;
 import ch.tbz.util.PropertiesLoader;
 
 import java.util.Properties;
+import java.util.UUID;
 
 public class Main {
     public static API api;
@@ -16,7 +17,8 @@ public class Main {
     }
 
     public static void main(String[] args) {
-        new Main();
-        MainPage mainPage = new MainPage();
+//        new Main();
+//        MainPage mainPage = new MainPage();
+        System.out.println(UUID.randomUUID());
     }
 }

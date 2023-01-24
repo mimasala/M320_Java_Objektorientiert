@@ -49,7 +49,7 @@ public class OsuActionsPage extends ActionPage implements GUIActions {
         inputPage.getTextField().addActionListener(e -> {
             osuController.create(
                     jsonService.read(
-                            inputPage.getTextField().getText()));
+                            inputPage.getTextField().getText(), Osu.class));
             inputPage.dispose();
         });
     }
@@ -60,7 +60,7 @@ public class OsuActionsPage extends ActionPage implements GUIActions {
         inputPage.getTextField().addActionListener(e -> {
             osuController.update(
                     jsonService.read(
-                            inputPage.getTextField().getText()));
+                            inputPage.getTextField().getText(), Osu.class));
             inputPage.dispose();
         });
     }
@@ -71,9 +71,7 @@ public class OsuActionsPage extends ActionPage implements GUIActions {
         inputPage.getTextField().addActionListener(e -> {
             osuController.delete(
                     jsonService.read(
-                            inputPage
-                                    .getTextField()
-                                    .getText()));
+                            inputPage.getTextField().getText(), Osu.class));
             inputPage.dispose();
         });
     }
@@ -108,28 +106,22 @@ public class OsuActionsPage extends ActionPage implements GUIActions {
     @Override
     public void uploadJson() {
         inputPage = new InputPage("uploadJson");
-        inputPage.getTextField().addActionListener(e -> {
-            osuController.update(
-                    jsonService.read(
-                            inputPage.getTextField().getText()));
-        });
+        inputPage.getTextField().addActionListener(e -> osuController.update(
+                jsonService.read(
+                        inputPage.getTextField().getText(), Osu.class)));
     }
     private void addActionListeners(){
-        Arrays.stream(getComponents()).forEach(component -> {
-            if (component instanceof JButton button) {
-                button.addActionListener(e -> {
-                    String action = button.getText();
-                    switch (action) {
-                        case "find all" -> findAll();
-                        case "create" -> create();
-                        case "update" -> update();
-                        case "delete" -> delete();
-                        case "delete by id" -> deleteById();
-                        case "find by id" -> findById();
-                        case "upload .json" -> uploadJson();
-                    }
-                });
+        getButtons().forEach(button -> button.addActionListener(e -> {
+            String action = button.getText();
+            switch (action) {
+                case "find all" -> findAll();
+                case "create" -> create();
+                case "update" -> update();
+                case "delete" -> delete();
+                case "delete by id" -> deleteById();
+                case "find by id" -> findById();
+                case "upload .json" -> uploadJson();
             }
-        });
+        }));
     }
 }

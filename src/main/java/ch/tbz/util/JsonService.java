@@ -9,11 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class JsonService<T extends AbstractEntity> {
-    public T read(String json) {
-        Type type = new TypeToken<T>() {}.getType();
-        return new Gson().fromJson(json, type);
+    public T read(String json, Class<T> clazz) {
+        return new Gson().fromJson(json, clazz);
     }
-    public List<T> readList(String json) {
+    public List<T> readList(String json, Class<T> clazz) {
         Type listType = new TypeToken<ArrayList<T>>(){}.getType();
         return new Gson().fromJson(json, listType);
     }
