@@ -29,7 +29,6 @@ public class OsuActionsPage extends ActionPage implements GUIActions {
         outputLabel.setPreferredSize(new Dimension(getWidth(), 600));
         outputLabel.setHorizontalAlignment(SwingConstants.CENTER);
 
-        customizeOutputLabel("hello test123");
         addActionListeners();
 
     }
@@ -45,11 +44,12 @@ public class OsuActionsPage extends ActionPage implements GUIActions {
 
     @Override
     public void create() {
+        System.out.println("hello create");
         inputPage = new InputPage("create");
         inputPage.getTextField().addActionListener(e -> {
             osuController.create(
                     jsonService.read(
-                            inputPage.getTextField().getText(), Osu.class));
+                            inputPage.getTextField().getText()));
             inputPage.dispose();
         });
     }
@@ -60,7 +60,7 @@ public class OsuActionsPage extends ActionPage implements GUIActions {
         inputPage.getTextField().addActionListener(e -> {
             osuController.update(
                     jsonService.read(
-                            inputPage.getTextField().getText(), Osu.class));
+                            inputPage.getTextField().getText()));
             inputPage.dispose();
         });
     }
@@ -73,7 +73,7 @@ public class OsuActionsPage extends ActionPage implements GUIActions {
                     jsonService.read(
                             inputPage
                                     .getTextField()
-                                    .getText(), Osu.class));
+                                    .getText()));
             inputPage.dispose();
         });
     }
@@ -101,6 +101,7 @@ public class OsuActionsPage extends ActionPage implements GUIActions {
 
     @Override
     public void findAll() {
+        System.out.println("hello findAll");
         customizeOutputLabel(Arrays.toString(osuController.findAll().toArray()));
     }
 
@@ -110,7 +111,7 @@ public class OsuActionsPage extends ActionPage implements GUIActions {
         inputPage.getTextField().addActionListener(e -> {
             osuController.update(
                     jsonService.read(
-                            inputPage.getTextField().getText(), Osu.class));
+                            inputPage.getTextField().getText()));
         });
     }
     private void addActionListeners(){
@@ -119,6 +120,7 @@ public class OsuActionsPage extends ActionPage implements GUIActions {
                 button.addActionListener(e -> {
                     String action = button.getText();
                     switch (action) {
+                        case "find all" -> findAll();
                         case "create" -> create();
                         case "update" -> update();
                         case "delete" -> delete();

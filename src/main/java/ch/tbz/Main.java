@@ -16,6 +16,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
+        new Main();
         MainPage mainPage = new MainPage();
     }
 }

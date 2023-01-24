@@ -29,18 +29,25 @@ public class API {
     }
 
     public String get(String endpoint) throws IOException {
-        HttpRequest request = requestFactory.buildGetRequest(new GenericUrl(baseUrl + entityPrefix + endpoint));
-        HttpResponse response = request.execute();
-        // do something with the response
-        return response.parseAsString();
+        return requestFactory.buildGetRequest(
+                new GenericUrl(baseUrl + entityPrefix + endpoint))
+                .execute().parseAsString();
     }
-
-    public String post(String endpoint, Object data) throws IOException {
-        String json = gson.toJson(data);
-        HttpContent content = new UrlEncodedContent(json);
-        HttpRequest request = requestFactory.buildPostRequest(new GenericUrl(baseUrl + entityPrefix + endpoint), content);
-        HttpResponse response = request.execute();
-        // do something with the response
-        return response.parseAsString();
+    public String delete(String endpoint) throws IOException {
+        return requestFactory.buildDeleteRequest(
+                new GenericUrl(baseUrl + entityPrefix + endpoint))
+                .execute().parseAsString();
+    }
+    public String post(String endpoint, Object body) throws IOException {
+        return requestFactory.buildPostRequest(
+                new GenericUrl(baseUrl + entityPrefix + endpoint),
+                new ByteArrayContent("application/json", gson.toJson(body).getBytes()))
+                .execute().parseAsString();
+    }
+    public String put(String endpoint, Object body) throws IOException {
+        return requestFactory.buildPutRequest(
+                new GenericUrl(baseUrl + entityPrefix + endpoint),
+                new ByteArrayContent("application/json", gson.toJson(body).getBytes()))
+                .execute().parseAsString();
     }
 }

@@ -20,35 +20,44 @@ public abstract class AbstractEntityRepository<T extends AbstractEntity> {
     JsonService<T> jsonService = new JsonService<>();
     public T save(T entity) {
         try {
-            String response = api.post("/", jsonService.write(entity));
-            log(Level.INFO, "Saved entity: " + response);
+            api.post("", jsonService.write(entity));
         } catch (IOException e) {
-            log(Level.SEVERE,e.getMessage());
+            log(Level.SEVERE, e.getMessage());
         }
-        return null;
+        return entity;
     }
 
     public void delete(T entity) {
         try {
-            String response = api.post("/", jsonService.write(entity));
-            log(Level.INFO, "Deleted entity: " + response);
+            api.delete(entity.getId().toString());
         } catch (IOException e) {
-            log(Level.SEVERE,e.getMessage());
+            log(Level.SEVERE, e.getMessage());
         }
     }
 
     public void deleteById(UUID id) {
-        System.out.println("deleteById");
-        //TODO : implement
+        try {
+            api.delete(id.toString());
+        } catch (IOException e) {
+            log(Level.SEVERE, e.getMessage());
+        }
     }
 
     public T findById(UUID id) {
-        System.out.println("findById");
-        //TODO : implement
+        try {
+            return jsonService.read(api.get(id.toString()));
+        } catch (IOException e) {
+            log(Level.SEVERE, e.getMessage());
+        }
         return null;
     }
 
     public List<T> findAll() {
+        try {
+            return jsonService.readList(api.get(""));
+        } catch (IOException e) {
+            log(Level.SEVERE, e.getMessage());
+        }
         return null;
     }
 }

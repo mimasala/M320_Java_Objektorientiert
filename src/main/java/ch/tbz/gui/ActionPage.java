@@ -12,6 +12,7 @@ public abstract class ActionPage extends JFrame {
     private boolean isWindowCreated;
 
     private final String[] actions = new String[] {
+            "find all",
             "create",
             "update",
             "delete",
