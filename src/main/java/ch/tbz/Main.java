@@ -7,18 +7,14 @@ import ch.tbz.util.PropertiesLoader;
 import java.util.Properties;
 import java.util.UUID;
 
-public class Main {
-    public static API api;
-    private Properties properties;
 
-    public Main() {
-        this.properties = PropertiesLoader.loadProperties();
-        api = new API(properties.getProperty("backend.url"));
-    }
+public class Main {
 
     public static void main(String[] args) {
-//        new Main();
-//        MainPage mainPage = new MainPage();
-        System.out.println(UUID.randomUUID());
+        MainPage mainPage = new MainPage();
+//        System.out.println(UUID.randomUUID());
+    }
+    public static Properties getSystemProperties() {
+        return PropertiesLoader.loadProperties();
     }
 }

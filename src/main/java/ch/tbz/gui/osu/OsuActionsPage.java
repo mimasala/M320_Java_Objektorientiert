@@ -92,7 +92,7 @@ public class OsuActionsPage extends ActionPage implements GUIActions {
         inputPage.getTextField().addActionListener(e -> {
             customizeOutputLabel(osuController.findById(
                     UUID.fromString(
-                            inputPage.getTextField().getText())).toString());
+                            inputPage.getTextField().getText())));
             inputPage.dispose();
         });
     }

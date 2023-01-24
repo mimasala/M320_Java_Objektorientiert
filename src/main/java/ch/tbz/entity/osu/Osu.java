@@ -1,7 +1,12 @@
 package ch.tbz.entity.osu;
 
 import ch.tbz.generic.AbstractEntity;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
+@Getter@Setter@AllArgsConstructor@ToString
 public class Osu extends AbstractEntity {
     private String title;
     private String artist;

@@ -16,7 +16,6 @@ public class API {
     @Setter(AccessLevel.NONE)
     private final Gson gson;
     private String baseUrl;
-    private String entityPrefix;
 
     public API(String baseUrl) {
         HttpTransport httpTransport = new NetHttpTransport();
@@ -30,23 +29,23 @@ public class API {
 
     public String get(String endpoint) throws IOException {
         return requestFactory.buildGetRequest(
-                new GenericUrl(baseUrl + entityPrefix + endpoint))
+                new GenericUrl(baseUrl + endpoint))
                 .execute().parseAsString();
     }
     public String delete(String endpoint) throws IOException {
         return requestFactory.buildDeleteRequest(
-                new GenericUrl(baseUrl + entityPrefix + endpoint))
+                new GenericUrl(baseUrl + endpoint))
                 .execute().parseAsString();
     }
     public String post(String endpoint, Object body) throws IOException {
         return requestFactory.buildPostRequest(
-                new GenericUrl(baseUrl + entityPrefix + endpoint),
+                new GenericUrl(baseUrl + endpoint),
                 new ByteArrayContent("application/json", gson.toJson(body).getBytes()))
                 .execute().parseAsString();
     }
     public String put(String endpoint, Object body) throws IOException {
         return requestFactory.buildPutRequest(
-                new GenericUrl(baseUrl + entityPrefix + endpoint),
+                new GenericUrl(baseUrl + endpoint),
                 new ByteArrayContent("application/json", gson.toJson(body).getBytes()))
                 .execute().parseAsString();
     }

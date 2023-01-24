@@ -26,7 +26,7 @@ public abstract class AbstractEntityController<T extends AbstractEntity> {
         service.deleteById(id);
     }
 
-    public T findById(UUID id) {
+    public String findById(UUID id) {
         return service.findById(id);
     }
 

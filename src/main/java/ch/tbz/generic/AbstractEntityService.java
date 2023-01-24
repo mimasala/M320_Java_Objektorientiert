@@ -26,7 +26,7 @@ public abstract class AbstractEntityService<T extends AbstractEntity> {
         repository.deleteById(id);
     }
 
-    public T findById(UUID id) {
+    public String findById(UUID id) {
         return repository.findById(id);
     }
 
