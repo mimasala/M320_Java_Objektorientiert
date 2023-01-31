@@ -1,5 +1,6 @@
 package ch.tbz.generic;
 
+import ch.tbz.exception.AbstractEntityNotFoundException;
 import ch.tbz.util.JsonService;
 
 import java.lang.reflect.Type;
@@ -46,7 +47,11 @@ public abstract class AbstractEntityService<T extends AbstractEntity> {
 
     public String findById(UUID id) {
         try {
-            return repository.findById(id);
+            String entity = repository.findById(id);
+            if (entity == null) {
+                throw new AbstractEntityNotFoundException("Entity not found");
+            }
+            return entity;
         } catch (Exception e) {
             log(Level.SEVERE, e.getMessage());
         }
@@ -55,7 +60,11 @@ public abstract class AbstractEntityService<T extends AbstractEntity> {
 
     public List<T> findAll() {
         try {
-            return jsonService.fromJsonList(repository.findAll());
+            String all = repository.findAll();
+            if (all == null){
+                throw new AbstractEntityNotFoundException("No entities found");
+            }
+            return jsonService.fromJsonList(all);
         } catch (Exception e) {
             log(Level.SEVERE, e.getMessage());
         }
