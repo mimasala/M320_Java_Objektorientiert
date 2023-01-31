@@ -18,8 +18,8 @@ As I had to go through alot of pain making everything generic, especially when m
 - Java Swing GUI
 - Abstract classes for backend for easy implementing of new entities
 - JSON server as database
-- Generic methods for mapping objects to json and vice versa
-
+- Generic methods for mapping objects to json and vice versa\
+- Logging to external file
 
 ---
 #### sequence diagram of creating a new osu object and saving it in the DB
@@ -100,3 +100,51 @@ initialize the db:
   - No. Although it was fun, I would not do it again. Though I would use the same approach (generic programming) for a real-world application.
 - would I recommend it?
   - No. I would not recommend it. It was fun, but it was not worth it. I would recommend using Spring Boot instead.
+
+----
+
+example objects:
+
+```json
+{
+  "osu": [
+    {
+      "title": "From Ruin... We Rise",
+      "artist": "Shadow of Intent",
+      "gamemode": 0,
+      "mapper": "[N1co]",
+      "difficulty_ar": 9.8,
+      "difficulty_hp": 4,
+      "source": "",
+      "bpm": 180,
+      "play_length": 38,
+      "difficulty_od": 9.5,
+      "beatmapset": 1111686,
+      "favorites": 0,
+      "date": "2023-01-23T21:03:23",
+      "genre": "Unspecified",
+      "difficulty": 6.19553,
+      "difficulty_cs": 4.2,
+      "difficulty_name": "Elegy",
+      "pass_count": 0,
+      "beatmap_id": 3981791,
+      "beatmapset_id": 1928101,
+      "language": "Other",
+      "total_length": 55,
+      "beatmap_status": -1,
+      "map_count": 1,
+      "play_count": 0,
+      "id": "53e564b4-2e9e-4c87-8261-65aac02c2c7d"
+    }
+  ],
+  "user": [
+    {
+      "username": "Mischa",
+      "country": "CH",
+      "country_code": "CH",
+      "join_date": "12.09.21",
+      "playstyle": "osu",
+      "id": "2c4d0109-d8bb-4f87-bc89-af4150d7c928"
+    }
+  ]
+}```

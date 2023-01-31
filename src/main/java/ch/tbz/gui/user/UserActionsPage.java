@@ -11,7 +11,11 @@ import ch.tbz.util.JsonService;
 import java.util.UUID;
 
 import static ch.tbz.Main.getSystemProperties;
-
+/**
+ * User Actions Page
+ * @author mytal
+ * @version 1.0.0
+ */
 public class UserActionsPage extends ActionPage implements GUIActions {
     private final UserController userController;
     private final JsonService jsonService;

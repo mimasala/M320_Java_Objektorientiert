@@ -9,7 +9,11 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-
+/**
+ * Json Service
+ * @author mytal
+ * @version 1.0.0
+ */
 public class JsonService {
 
     public <I extends AbstractEntity> String toJson(I entity) {

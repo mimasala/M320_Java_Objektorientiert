@@ -40,3 +40,4 @@ build/
 
 ### M320 ###
 *.db.json
+*.log
