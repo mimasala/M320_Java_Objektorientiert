@@ -13,12 +13,12 @@ import java.util.List;
 public abstract class ActionPage extends JFrame {
     private boolean isWindowCreated;
     private List<JButton> buttons;
+    private Console outputConsole = new Console();
 
     private final String[] actions = new String[] {
             "find all",
             "create",
             "update",
-            "delete",
             "delete by id",
             "find by id",
             "upload .json"
@@ -29,6 +29,7 @@ public abstract class ActionPage extends JFrame {
         setSize(1000, 800);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLayout(new FlowLayout());
+        outputConsole.textPane.append(new Color(244, 244, 244), "Welcome to the " + title + " Actions Page");
 
         createActionButtons();
 

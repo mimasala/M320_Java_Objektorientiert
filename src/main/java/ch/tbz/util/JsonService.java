@@ -7,17 +7,18 @@ import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
-public class JsonService<T extends AbstractEntity> {
-    public T read(String json, Class<T> clazz) {
-        return new Gson().fromJson(json, clazz);
+public class JsonService {
+
+    public <I extends AbstractEntity> String toJson(I entity) {
+        return new Gson().toJson(entity);
     }
-    public List<T> readList(String json, Class<T> clazz) {
-        Type listType = new TypeToken<ArrayList<T>>(){}.getType();
+    public <I extends AbstractEntity> I fromJson(String json, Type type) {
+        return new Gson().fromJson(json, type);
+    }
+    public <I extends AbstractEntity> List<I> fromJsonList(String json) {
+        Type listType = new TypeToken<ArrayList<I>>(){}.getType();
         return new Gson().fromJson(json, listType);
-    }
-
-    public String write(T object) {
-        return new Gson().toJson(object);
     }
 }

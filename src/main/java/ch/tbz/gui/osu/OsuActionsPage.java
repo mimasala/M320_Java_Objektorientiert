@@ -7,6 +7,7 @@ import ch.tbz.entity.osu.OsuService;
 import ch.tbz.gui.ActionPage;
 import ch.tbz.gui.GUIActions;
 import ch.tbz.gui.InputPage;
+import ch.tbz.util.API;
 import ch.tbz.util.JsonService;
 
 import javax.swing.*;
@@ -14,17 +15,18 @@ import java.awt.*;
 import java.util.Arrays;
 import java.util.UUID;
 
+import static ch.tbz.Main.getSystemProperties;
+
 public class OsuActionsPage extends ActionPage implements GUIActions {
-    private final JsonService<Osu> jsonService;
     private final OsuController osuController;
     private final JLabel outputLabel = new JLabel();
     private InputPage inputPage;
+
     public OsuActionsPage() {
         super("OSU");
-        OsuRepository osuRepository = new OsuRepository();
-        OsuService osuService = new OsuService(osuRepository);
+        OsuRepository osuRepository = new OsuRepository(new API(getSystemProperties().getProperty("backend.url") + "osu/"));
+        OsuService osuService = new OsuService(osuRepository, Osu.class);
         this.osuController = new OsuController(osuService);
-        this.jsonService = new JsonService<>();
 
         outputLabel.setPreferredSize(new Dimension(getWidth(), 600));
         outputLabel.setHorizontalAlignment(SwingConstants.CENTER);
@@ -47,9 +49,7 @@ public class OsuActionsPage extends ActionPage implements GUIActions {
         System.out.println("hello create");
         inputPage = new InputPage("create");
         inputPage.getTextField().addActionListener(e -> {
-            osuController.create(
-                    jsonService.read(
-                            inputPage.getTextField().getText(), Osu.class));
+            osuController.create(inputPage.getTextField().getText());
             inputPage.dispose();
         });
     }
@@ -58,20 +58,7 @@ public class OsuActionsPage extends ActionPage implements GUIActions {
     public void update() {
         inputPage = new InputPage("update");
         inputPage.getTextField().addActionListener(e -> {
-            osuController.update(
-                    jsonService.read(
-                            inputPage.getTextField().getText(), Osu.class));
-            inputPage.dispose();
-        });
-    }
-
-    @Override
-    public void delete() {
-        inputPage = new InputPage("delete");
-        inputPage.getTextField().addActionListener(e -> {
-            osuController.delete(
-                    jsonService.read(
-                            inputPage.getTextField().getText(), Osu.class));
+            osuController.update(inputPage.getTextField().getText());
             inputPage.dispose();
         });
     }
@@ -106,9 +93,8 @@ public class OsuActionsPage extends ActionPage implements GUIActions {
     @Override
     public void uploadJson() {
         inputPage = new InputPage("uploadJson");
-        inputPage.getTextField().addActionListener(e -> osuController.update(
-                jsonService.read(
-                        inputPage.getTextField().getText(), Osu.class)));
+        inputPage.getTextField().addActionListener(e ->
+                osuController.update(inputPage.getTextField().getText()));
     }
     private void addActionListeners(){
         getButtons().forEach(button -> button.addActionListener(e -> {
@@ -117,7 +103,6 @@ public class OsuActionsPage extends ActionPage implements GUIActions {
                 case "find all" -> findAll();
                 case "create" -> create();
                 case "update" -> update();
-                case "delete" -> delete();
                 case "delete by id" -> deleteById();
                 case "find by id" -> findById();
                 case "upload .json" -> uploadJson();

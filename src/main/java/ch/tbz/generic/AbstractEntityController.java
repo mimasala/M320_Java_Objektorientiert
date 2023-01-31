@@ -10,16 +10,12 @@ public abstract class AbstractEntityController<T extends AbstractEntity> {
         this.service = service;
     }
 
-    public T create(T entity) {
+    public T create(String entity) {
         return service.create(entity);
     }
 
-    public T update(T entity) {
+    public T update(String entity) {
         return service.update(entity);
-    }
-
-    public void delete(T entity) {
-        service.delete(entity);
     }
 
     public void deleteById(UUID id) {
