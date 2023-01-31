@@ -20,10 +20,6 @@ As I had to go through alot of pain making everything generic, especially when m
 - JSON server as database
 - Generic methods for mapping objects to json and vice versa
 
-### Architecture
-
-
-
 
 ---
 #### sequence diagram of creating a new osu object and saving it in the DB
@@ -79,6 +75,8 @@ deactivate OsuActionsPage
 
 
 ## Setup
+get json-server:
+`npm install -g json-server`
 start db:
 `json-server --watch m320.db.json`
 initialize the db:
@@ -89,3 +87,16 @@ initialize the db:
 }
 ```
 
+# Conclusion
+- was it worth it?
+  - yes:
+    I learned alot about abstract classes and how to use them in a real-world application.
+    I also learned alot about the java swing library and how to use it to create a GUI. 
+    It took me most of the time to implement the first Entity, and the user entity took me 10 minutes to implement, because its all generic.
+  - no:
+    I had to go through alot of pain to make everything generic, especially when mapping objects from json, to json etc.
+    (the hibernate layer is missing)
+- would I do it again?
+  - No. Although it was fun, I would not do it again. Though I would use the same approach (generic programming) for a real-world application.
+- would I recommend it?
+  - No. I would not recommend it. It was fun, but it was not worth it. I would recommend using Spring Boot instead.
