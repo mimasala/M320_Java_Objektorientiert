@@ -6,5 +6,4 @@ public interface GUIActions {
     void deleteById();
     void findById();
     void findAll();
-    void uploadJson();
 }

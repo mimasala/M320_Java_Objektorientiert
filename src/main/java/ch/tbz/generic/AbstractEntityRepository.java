@@ -1,6 +1,7 @@
 package ch.tbz.generic;
 
 import ch.tbz.util.API;
+import ch.tbz.util.JsonService;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,11 +12,12 @@ import java.util.UUID;
 @Getter@Setter
 public abstract class AbstractEntityRepository<T extends AbstractEntity> {
     public API api;
+    public JsonService jsonService = new JsonService();
     public AbstractEntityRepository(API api) {
         this.api = api;
     }
-    public String save(String entityJson) throws IOException {
-        return api.post("",entityJson);
+    public String save(AbstractEntity entityJson) throws IOException {
+        return api.post("",jsonService.toJson(entityJson));
     }
 
     public void deleteById(UUID id) throws IOException {

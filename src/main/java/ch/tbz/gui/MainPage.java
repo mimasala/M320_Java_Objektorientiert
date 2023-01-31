@@ -25,10 +25,6 @@ public class MainPage extends JFrame {
         titleImage.setPreferredSize(new Dimension(this.getWidth(), 200));
         add(titleImage);
 
-
-
-
-
         setVisible(true);
     }
     private void initButtons() {

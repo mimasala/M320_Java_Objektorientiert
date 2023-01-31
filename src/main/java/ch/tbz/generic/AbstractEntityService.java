@@ -1,7 +1,6 @@
 package ch.tbz.generic;
 
 import ch.tbz.util.JsonService;
-import ch.tbz.util.OsuLog;
 
 import java.lang.reflect.Type;
 import java.util.List;
@@ -21,22 +20,20 @@ public abstract class AbstractEntityService<T extends AbstractEntity> {
         this.jsonService = new JsonService();
     }
 
-    public T create(String entity) {
+    public void create(AbstractEntity entity) {
         try {
-            return jsonService.fromJson(repository.save(entity), type);
+            jsonService.fromJson(repository.save(createUUID(entity)), type);
         } catch (Exception e) {
             log(Level.SEVERE, e.getMessage());
         }
-        return null;
     }
 
-    public T update(String entity) {
+    public void update(AbstractEntity entity) {
         try {
-            return jsonService.fromJson(repository.save(entity), type);
+            jsonService.fromJson(repository.save(createUUID(entity)), type);
         } catch (Exception e) {
             log(Level.SEVERE, e.getMessage());
         }
-        return null;
     }
 
     public void deleteById(UUID id) {
@@ -63,5 +60,11 @@ public abstract class AbstractEntityService<T extends AbstractEntity> {
             log(Level.SEVERE, e.getMessage());
         }
         return null;
+    }
+    private AbstractEntity createUUID(AbstractEntity entity) {
+        if (entity.getId() == null) {
+            entity.setId(UUID.randomUUID());
+        }
+        return entity;
     }
 }

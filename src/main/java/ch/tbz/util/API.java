@@ -32,15 +32,15 @@ public class API {
                 new GenericUrl(baseUrl + endpoint))
                 .execute().parseAsString();
     }
-    public String delete(String endpoint) throws IOException {
-        return requestFactory.buildDeleteRequest(
-                new GenericUrl(baseUrl + endpoint))
+    public void delete(String endpoint) throws IOException {
+        requestFactory.buildDeleteRequest(
+                        new GenericUrl(baseUrl + endpoint))
                 .execute().parseAsString();
     }
-    public String post(String endpoint, Object body) throws IOException {
+    public String post(String endpoint, String body) throws IOException {
         return requestFactory.buildPostRequest(
                 new GenericUrl(baseUrl + endpoint),
-                new ByteArrayContent("application/json", gson.toJson(body).getBytes()))
+                new ByteArrayContent("application/json", body.getBytes()))
                 .execute().parseAsString();
     }
     public String put(String endpoint, Object body) throws IOException {
