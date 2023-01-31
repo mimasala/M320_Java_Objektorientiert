@@ -6,6 +6,11 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+/**
+ * User Entity
+ * @author mytal
+ * @version 1.0.0
+ */
 @Getter
 @Setter
 @AllArgsConstructor

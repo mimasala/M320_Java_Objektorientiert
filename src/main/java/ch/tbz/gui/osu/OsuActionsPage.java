@@ -12,7 +12,11 @@ import ch.tbz.util.JsonService;
 import java.util.UUID;
 
 import static ch.tbz.Main.getSystemProperties;
-
+/**
+ * Osu Actions Page
+ * @author mytal
+ * @version 1.0.0
+ */
 public class OsuActionsPage extends ActionPage implements GUIActions {
     private final OsuController osuController;
     private final JsonService jsonService;

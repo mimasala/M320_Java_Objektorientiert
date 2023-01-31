@@ -8,7 +8,11 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
+/**
+ * Action Page
+ * @author mytal
+ * @version 1.0.0
+ */
 @Getter@Setter
 public abstract class ActionPage extends JFrame {
     private boolean isWindowCreated;

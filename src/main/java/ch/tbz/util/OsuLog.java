@@ -6,7 +6,11 @@ import java.util.logging.FileHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
-
+/**
+ * Osu Log
+ * @author mytal
+ * @version 1.0.0
+ */
 public class OsuLog {
     private static final Logger logger = Logger.getLogger(OsuLog.class.getName());
 

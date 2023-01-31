@@ -18,8 +18,8 @@ As I had to go through alot of pain making everything generic, especially when m
 - Java Swing GUI
 - Abstract classes for backend for easy implementing of new entities
 - JSON server as database
-- Generic methods for mapping objects to json and vice versa
-
+- Generic methods for mapping objects to json and vice versa\
+- Logging to external file
 
 ---
 #### sequence diagram of creating a new osu object and saving it in the DB

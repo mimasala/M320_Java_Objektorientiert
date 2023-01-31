@@ -3,7 +3,11 @@ package ch.tbz.gui;
 import lombok.Getter;
 
 import javax.swing.*;
-
+/**
+ * Input Page
+ * @author mytal
+ * @version 1.0.0
+ */
 @Getter
 public class InputPage extends JFrame {
     private final JTextField textField;

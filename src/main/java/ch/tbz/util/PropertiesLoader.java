@@ -3,7 +3,11 @@ package ch.tbz.util;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.Properties;
-
+/**
+ * Properties Loader
+ * @author mytal
+ * @version 1.0.0
+ */
 public class PropertiesLoader {
     public static Properties loadProperties() {
         Properties properties = new Properties();

@@ -6,7 +6,11 @@ import ch.tbz.gui.user.UserActionsPage;
 import java.awt.*;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
-
+/**
+ * Main Page
+ * @author mytal
+ * @version 1.0.0
+ */
 public class MainPage extends JFrame {
     private ActionPage actionPage;
     public MainPage() {

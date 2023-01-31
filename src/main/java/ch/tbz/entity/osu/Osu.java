@@ -5,7 +5,11 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-
+/**
+ * Osu Entity
+ * @author mytal
+ * @version 1.0.0
+ */
 @Getter
 @Setter
 @AllArgsConstructor

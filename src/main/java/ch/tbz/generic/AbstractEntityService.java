@@ -9,7 +9,11 @@ import java.util.UUID;
 import java.util.logging.Level;
 
 import static ch.tbz.util.OsuLog.log;
-
+/**
+ * Abstract Entity Service
+ * @author mytal
+ * @version 1.0.0
+ */
 public abstract class AbstractEntityService<T extends AbstractEntity> {
     private final AbstractEntityRepository<T> repository;
     private final Type type;

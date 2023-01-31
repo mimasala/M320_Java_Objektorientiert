@@ -6,9 +6,12 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.io.IOException;
-import java.util.List;
 import java.util.UUID;
-
+/**
+ * Abstract Entity Repository
+ * @author mytal
+ * @version 1.0.0
+ */
 @Getter@Setter
 public abstract class AbstractEntityRepository<T extends AbstractEntity> {
     public API api;

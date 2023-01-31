@@ -8,7 +8,11 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.io.IOException;
-
+/**
+ * API
+ * @author mytal
+ * @version 1.0.0
+ */
 @Getter@Setter
 public class API {
     @Setter(AccessLevel.NONE)

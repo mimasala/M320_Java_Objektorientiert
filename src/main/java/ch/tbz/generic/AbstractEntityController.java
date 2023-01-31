@@ -1,10 +1,13 @@
 package ch.tbz.generic;
 
-import ch.tbz.util.JsonService;
 
 import java.util.List;
 import java.util.UUID;
-
+/**
+ * Abstract Entity Controller
+ * @author mytal
+ * @version 1.0.0
+ */
 public abstract class AbstractEntityController<T extends AbstractEntity> {
     private final AbstractEntityService<T> service;
 
