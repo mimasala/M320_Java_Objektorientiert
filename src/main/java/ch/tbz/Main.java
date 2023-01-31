@@ -12,7 +12,7 @@ public class Main {
 
     public static void main(String[] args) {
         MainPage mainPage = new MainPage();
-//        System.out.println(UUID.randomUUID());
+
     }
     public static Properties getSystemProperties() {
         return PropertiesLoader.loadProperties();

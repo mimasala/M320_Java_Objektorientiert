@@ -41,4 +41,19 @@ public abstract class ActionPage extends JFrame {
             add(button);
         });
     }
+    protected void customizeOutputLabel(String text, String title) {
+        JTextArea textArea = new JTextArea(text);
+        JScrollPane scrollPane = new JScrollPane(textArea);
+        textArea.setLineWrap(true);
+        textArea.setWrapStyleWord(true);
+        scrollPane.setPreferredSize( new Dimension( 500, 500 ) );
+        JOptionPane.showMessageDialog(null, scrollPane, title,
+                JOptionPane.INFORMATION_MESSAGE);
+    }
+    protected void customizeOutputLabel(String text) {
+        customizeOutputLabel(text, "Osu Actions");
+    }
+    protected String promptForInput(String message) {
+        return JOptionPane.showInputDialog(this, message);
+    }
 }

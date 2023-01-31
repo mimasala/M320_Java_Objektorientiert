@@ -9,8 +9,6 @@ import ch.tbz.gui.GUIActions;
 import ch.tbz.util.API;
 import ch.tbz.util.JsonService;
 
-import javax.swing.*;
-import java.awt.*;
 import java.util.UUID;
 
 import static ch.tbz.Main.getSystemProperties;
@@ -20,35 +18,13 @@ public class OsuActionsPage extends ActionPage implements GUIActions {
     private final JsonService jsonService;
 
     public OsuActionsPage() {
-        super("OSU");
+        super("Osu");
         OsuRepository osuRepository = new OsuRepository(new API(getSystemProperties().getProperty("backend.url") + "osu/"));
         OsuService osuService = new OsuService(osuRepository, Osu.class);
         this.osuController = new OsuController(osuService);
         this.jsonService = new JsonService();
-
         addActionListeners();
-
     }
-
-    private void customizeOutputLabel(String text, String title) {
-        JTextArea textArea = new JTextArea(text);
-        JScrollPane scrollPane = new JScrollPane(textArea);
-        textArea.setLineWrap(true);
-        textArea.setWrapStyleWord(true);
-        scrollPane.setPreferredSize( new Dimension( 500, 500 ) );
-        JOptionPane.showMessageDialog(null, scrollPane, title,
-                JOptionPane.INFORMATION_MESSAGE);
-    }
-    private void customizeOutputLabel(String text) {
-        customizeOutputLabel(text, "Osu Actions");
-    }
-
-    private String promptForInput(String message) {
-        return JOptionPane.showInputDialog(this, message);
-    }
-
-
-
     @Override
     public void create() {
         osuController.create(jsonService.fromJson(promptForInput("create"), Osu.class));
@@ -66,7 +42,6 @@ public class OsuActionsPage extends ActionPage implements GUIActions {
 
     @Override
     public void findById() {
-        System.out.println(osuController.findById(UUID.fromString(promptForInput("findById"))));
         customizeOutputLabel(osuController.findById(UUID.fromString(promptForInput("findById"))));
     }
 
